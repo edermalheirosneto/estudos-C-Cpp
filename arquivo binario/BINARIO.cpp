@@ -15,7 +15,6 @@ typedef struct{
 void Escrever(char arq[]);
 void Ler(char arq[]);
 void AlterarContato(char arq[]);
-void BuscarContato(char arq[]);
 void Escolha(int num, char arq[]);
 
 int main(){
