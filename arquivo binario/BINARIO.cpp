@@ -15,7 +15,6 @@ typedef struct{
 void Escrever(char arq[]);
 void Ler(char arq[]);
 void AlterarContato(char arq[]);
-void BuscarContato(char arq[]);
 void Escolha(int num, char arq[]);
 
 int main(){
@@ -28,8 +27,7 @@ int main(){
         printf("\t\t 01-ADICIONAR NOVO CONTATO \n");
         printf("\t\t 02-VER LISTA DE CONTATOS EXISTENTES\n");
         printf("\t\t 03-ALTERAR CONTATO EXISTENTE \n");
-        printf("\t\t 04-BUSCAR CONTATO SALVO \n");
-        printf("\t\t 05-SAIR \n");
+        printf("\t\t 04-SAIR \n");
         scanf("%d", &esq);
 
         setbuf(stdin, NULL);
@@ -120,30 +118,6 @@ void AlterarContato(char arq[]){
     }
 }
 
-
-
-void BuscarContato(char arq[]){
-    FILE *file = fopen(arq, "rb");
-    Contato c;
-    Contato cBusca;
-
-
-    if(file){
-        printf("DIGITE O NOME A SER ENCONTRADO: \n");
-        scanf("%59[^\n]", cBusca);
-        getchar();
-
-        while(fread(&c, sizeof(Contato), 1, file)){
-            if(strcmp(cBusca.nome, c.nome) == 0){
-                printf("ok");
-            }
-        }
-    }else{
-        printf("ERRO AO EFETUAR BUSCA NO ARQUIVO \n");
-    }
-}
-
-
 void Escolha(int num, char arq[]){
     if(num == 1){
         Escrever(arq);
@@ -154,8 +128,6 @@ void Escolha(int num, char arq[]){
         Ler(arq);
     }else if(num == 3){
         AlterarContato(arq);
-    }else if(num == 4){
-        BuscarContato(arq);
     }else{
         std::cout << "OPCAO INVALIDA!!" << std::endl;
     }
