@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1696264030 source:c:\users\kille\onedrive\Área de trabalho\fila-encadeada\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<ctype.h>
+
